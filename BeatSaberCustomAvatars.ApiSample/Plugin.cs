@@ -101,6 +101,7 @@ namespace BeatSaberCustomAvatars.ApiSample
                 {
                     _spawnedAvatar = _avatarSpawner.SpawnAvatar(loadedAvatar, new DummyInput());
                     _spawnedAvatar.scale = 1.665f / _spawnedAvatar.eyeHeight;
+                    _spawnedAvatar.UpdateFirstPersonVisibility(FirstPersonVisibility.Visible);
                 }));
 
             // prevent multiple spawns if OnTransitionDidFinish is called quickly since coroutine might take a few frames
@@ -109,9 +110,12 @@ namespace BeatSaberCustomAvatars.ApiSample
 
         private void DestroyAvatar()
         {
-            _logger.Info("Destroying avatar");
+            if (_spawnedAvatar)
+            {
+                _logger.Info("Destroying avatar");
+                Object.Destroy(_spawnedAvatar);
+            }
 
-            Object.Destroy(_spawnedAvatar);
             _avatarSpawned = false;
         }
     }
