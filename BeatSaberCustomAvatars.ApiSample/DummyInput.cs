@@ -10,11 +10,6 @@ namespace BeatSaberCustomAvatars.ApiSample
 
         public event Action inputChanged;
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
         public bool TryGetHeadPose(out Pose pose)
         {
             pose = new Pose(new Vector3(0, 1.665f, -1), Quaternion.Euler(0, 0, 0));
@@ -62,5 +57,7 @@ namespace BeatSaberCustomAvatars.ApiSample
             curl = null;
             return false;
         }
+
+        public void Dispose() { }
     }
 }
