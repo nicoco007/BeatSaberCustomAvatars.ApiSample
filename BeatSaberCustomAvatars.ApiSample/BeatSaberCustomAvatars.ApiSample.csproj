@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="manifest.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="manifest.json" />
   </ItemGroup>
 
