@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
   "author": "Nicolas Gnyra",
   "description": "A plugin to test external Custom Avatars functionality.",
-  "gameVersion": "1.9.1",
+  "gameVersion": "1.10.0",
   "id": "BeatSaberCustomAvatars.ApiSample",
   "name": "BeatSaberCustomAvatars.ApiSample",
   "version": "0.1.0",
