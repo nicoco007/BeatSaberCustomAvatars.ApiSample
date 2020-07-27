@@ -38,8 +38,9 @@
     </Reference>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if &quot;$(BeatSaberDir)&quot; neq &quot;&quot; (&#xD;&#xA;  copy &quot;$(TargetPath)&quot; &quot;$(BeatSaberDir)\Plugins&quot;&#xD;&#xA;  if &quot;$(Configuration)&quot; equ &quot;Debug&quot; (&#xD;&#xA;    copy &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(BeatSaberDir)\Plugins&quot;&#xD;&#xA;  )&#xD;&#xA;)" />
+  <Target Name="CopyBeatSaberFiles" AfterTargets="AfterBuild" Condition="$(BeatSaberDir) != ''">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BeatSaberDir)\Plugins" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(BeatSaberDir)\Plugins" Condition="$(Configuration) == 'Debug'" />
   </Target>
 
 </Project>
