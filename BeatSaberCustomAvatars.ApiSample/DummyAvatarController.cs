@@ -6,13 +6,20 @@ using Object = UnityEngine.Object;
 
 namespace BeatSaberCustomAvatars.ApiSample
 {
-    internal class DummyAvatarController : IDisposable
+    internal class DummyAvatarController : IInitializable, IDisposable
     {
         private GameScenesManager _gameScenesManager;
         private AvatarLoader _avatarLoader;
         private AvatarSpawner _avatarSpawner;
 
         private SpawnedAvatar _spawnedAvatar;
+
+        public void Initialize()
+        {
+            _gameScenesManager.transitionDidFinishEvent += OnTransitionDidFinish;
+
+            SpawnAvatar();
+        }
 
         public void Dispose()
         {
@@ -27,10 +34,6 @@ namespace BeatSaberCustomAvatars.ApiSample
             _gameScenesManager = gameScenesManager;
             _avatarLoader = avatarLoader;
             _avatarSpawner = avatarSpawner;
-
-            _gameScenesManager.transitionDidFinishEvent += OnTransitionDidFinish;
-
-            SpawnAvatar();
         }
 
         private void OnTransitionDidFinish(ScenesTransitionSetupDataSO setupData, DiContainer container)
