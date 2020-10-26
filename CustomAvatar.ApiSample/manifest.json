@@ -2,11 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
   "author": "Nicolas Gnyra",
   "description": "A plugin to test external Custom Avatars functionality.",
-  "gameVersion": "1.10.0",
+  "gameVersion": "1.12.2",
   "id": "CustomAvatar.ApiSample",
   "name": "Custom Avatars API Sample",
-  "version": "0.1.0",
-  "features": [],
+  "version": "1.0.0",
   "dependsOn": {
     "BSIPA": "^4.0.0",
     "CustomAvatars": "^5.0.0",
