@@ -1,13 +1,13 @@
 ﻿using Zenject;
 
-namespace BeatSaberCustomAvatars.ApiSample
+namespace CustomAvatar.ApiSample
 {
     internal class SampleInstaller : Installer
     {
         public override void InstallBindings()
         {
             // single instance & non-lazy so it is created as soon as the scene loads without the need to reference it
-            Container.BindInterfacesAndSelfTo<DummyAvatarController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<AvatarController>().AsSingle().NonLazy();
         }
     }
 }

@@ -12,6 +12,9 @@
     <Reference Include="CustomAvatar">
       <HintPath>$(BeatSaberDir)\Plugins\CustomAvatar.dll</HintPath>
     </Reference>
+    <Reference Include="CustomAvatar">
+      <HintPath>$(BeatSaberDir)\Plugins\SiraUtil.dll</HintPath>
+    </Reference>
     <Reference Include="HMLib">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\HMLib.dll</HintPath>
     </Reference>

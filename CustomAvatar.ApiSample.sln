@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatSaberCustomAvatars.ApiSample", "BeatSaberCustomAvatars.ApiSample\BeatSaberCustomAvatars.ApiSample.csproj", "{0046E8DF-938F-43CF-9B1D-DC57D76A0F04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAvatar.ApiSample", "CustomAvatar.ApiSample\CustomAvatar.ApiSample.csproj", "{0046E8DF-938F-43CF-9B1D-DC57D76A0F04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

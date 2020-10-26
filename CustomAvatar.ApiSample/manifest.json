@@ -3,12 +3,13 @@
   "author": "Nicolas Gnyra",
   "description": "A plugin to test external Custom Avatars functionality.",
   "gameVersion": "1.10.0",
-  "id": "BeatSaberCustomAvatars.ApiSample",
-  "name": "BeatSaberCustomAvatars.ApiSample",
+  "id": "CustomAvatar.ApiSample",
+  "name": "Custom Avatars API Sample",
   "version": "0.1.0",
   "features": [],
   "dependsOn": {
     "BSIPA": "^4.0.0",
-    "CustomAvatars": "5.0.0-rc.1"
+    "CustomAvatars": "^5.0.0",
+    "SiraUtil": "^2.0.0"
   }
 }
