@@ -74,6 +74,10 @@ namespace CustomAvatar.ApiSample
             _spawnedAvatar = _avatarSpawner.SpawnAvatar(avatar.avatar, new MirrorInput(_playerInput), _container);
             _spawnedAvatar.scale = avatar.scale;
             _spawnedAvatar.SetFirstPersonVisibility(FirstPersonVisibility.Visible);
+
+            // call our custom component's method
+            // you can just use GetComponent if you're sure your component will always be there (i.e. not using a condition when registering the component)
+            if (_spawnedAvatar.TryGetComponent(out SampleAvatarComponent comp)) comp.DoSomething();
         }
 
         private void OnAvatarScaleChanged(float scale)

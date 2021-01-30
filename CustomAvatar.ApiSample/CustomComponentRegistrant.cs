@@ -15,12 +15,19 @@ namespace CustomAvatar.ApiSample
 
         public void Initialize()
         {
-            _avatarSpawner.RegisterComponent<SampleAvatarComponent>();
+            // ShouldAddSampleComponent can be omitted if you always want the component to be added
+            _avatarSpawner.RegisterComponent<SampleAvatarComponent>(ShouldAddSampleComponent);
         }
 
         public void Dispose()
         {
             _avatarSpawner.DeregisterComponent<SampleAvatarComponent>();
+        }
+
+        private bool ShouldAddSampleComponent(LoadedAvatar avatar)
+        {
+            // add some actual logic here instead
+            return true;
         }
     }
 }

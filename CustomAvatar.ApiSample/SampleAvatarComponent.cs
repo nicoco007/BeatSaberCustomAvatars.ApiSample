@@ -18,5 +18,10 @@ namespace CustomAvatar.ApiSample
         {
             Debug.Log($"Spawned avatar's name is '{_avatar.avatar.descriptor.name}'");
         }
+
+        public void DoSomething()
+        {
+            Debug.Log("Hi, I'm here!");
+        }
     }
 }
