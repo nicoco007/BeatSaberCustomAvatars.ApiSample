@@ -8,6 +8,7 @@ namespace CustomAvatar.ApiSample
         {
             // single instance & non-lazy so it is created as soon as the scene loads without the need to reference it
             Container.BindInterfacesAndSelfTo<AvatarController>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<CustomComponentRegistrant>().AsSingle().NonLazy();
         }
     }
 }
