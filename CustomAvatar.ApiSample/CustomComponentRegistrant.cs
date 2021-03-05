@@ -24,7 +24,7 @@ namespace CustomAvatar.ApiSample
             _avatarSpawner.DeregisterComponent<SampleAvatarComponent>();
         }
 
-        private bool ShouldAddSampleComponent(LoadedAvatar avatar)
+        private bool ShouldAddSampleComponent(AvatarPrefab avatar)
         {
             // add some actual logic here instead
             return true;

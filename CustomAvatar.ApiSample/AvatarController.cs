@@ -15,7 +15,7 @@ namespace CustomAvatar.ApiSample
         private VRPlayerInput _playerInput;
         private FloorController _floorController;
 
-        private Transform _container;
+        private GameObject _container;
         private SpawnedAvatar _spawnedAvatar;
 
         public void Initialize()
@@ -25,11 +25,11 @@ namespace CustomAvatar.ApiSample
             _avatarManager.avatarScaleChanged += OnAvatarScaleChanged;
             _floorController.floorPositionChanged += OnFloorPositionChanged;
 
-            _container = new GameObject(nameof(AvatarController)).transform;
+            _container = new GameObject(nameof(AvatarController));
             Object.DontDestroyOnLoad(_container);
 
-            _container.position = new Vector3(0, 0, -2);
-            _container.rotation = Quaternion.Euler(0, 180, 0);
+            _container.transform.position = new Vector3(0, 0, -2);
+            _container.transform.rotation = Quaternion.Euler(0, 180, 0);
 
             OnAvatarChanged(_avatarManager.currentlySpawnedAvatar);
         }
@@ -71,7 +71,7 @@ namespace CustomAvatar.ApiSample
 
             if (!avatar) return;
 
-            _spawnedAvatar = _avatarSpawner.SpawnAvatar(avatar.avatar, new MirrorInput(_playerInput), _container);
+            _spawnedAvatar = _avatarSpawner.SpawnAvatar(avatar.prefab, new MirrorInput(_playerInput), _container.transform);
             _spawnedAvatar.scale = avatar.scale;
             _spawnedAvatar.SetFirstPersonVisibility(FirstPersonVisibility.Visible);
 
@@ -91,7 +91,7 @@ namespace CustomAvatar.ApiSample
         {
             if (!_spawnedAvatar) return;
 
-            _container.position = new Vector3(0, verticalPosition, -2);
+            _container.transform.position = new Vector3(0, verticalPosition, -2);
         }
 
         private void SetAvatarActive(bool active)

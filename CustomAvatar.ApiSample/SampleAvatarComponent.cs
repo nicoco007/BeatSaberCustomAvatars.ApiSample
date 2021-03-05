@@ -16,7 +16,7 @@ namespace CustomAvatar.ApiSample
 
         public void Start()
         {
-            Debug.Log($"Spawned avatar's name is '{_avatar.avatar.descriptor.name}'");
+            Debug.Log($"Spawned avatar's name is '{_avatar.prefab.descriptor.name}'");
         }
 
         public void DoSomething()
